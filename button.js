@@ -92,7 +92,7 @@ document.getElementById("newarea").addEventListener('click',function(){
 
 
             // if type delete in the input then btn will appear neither nor
-  const inpute =document.getElementById('inputt').addEventListener('keyup',function(event){
+  document.getElementById('inputt').addEventListener('keyup',function(event){
  const text1=event.target.value;
  const deletebutton=document.getElementById('deletebtn');
     if(text1 === "delete"){
@@ -102,5 +102,65 @@ document.getElementById("newarea").addEventListener('click',function(){
      }
 })
 
-                // parent and child k dore kaj
- 
+                // bubble propagation off kora
+
+document.getElementById('father').addEventListener('click',function (event){
+console.log('clicked ul')
+
+})
+ document.getElementById('items2').addEventListener('click',function(event){
+    console.log('clicked li 1');
+   
+
+ })
+ document.getElementById('items2').addEventListener('click',function(event){
+    console.log('clicked li 1 snd time');
+    event.stopPropagation();
+
+ })
+
+ document.getElementById('items1').addEventListener('click',function(event){
+    console.log('clicked li 1');
+    event.stopPropagation()
+
+ })
+ document.getElementById('items1').addEventListener('click',function(event){
+    console.log('clicked li 1ssssssss');
+    
+
+ })
+ document.getElementById('body').addEventListener('click',function(){
+    console.log('clicked body');
+   
+
+ })
+
+
+
+
+                    // click korle disappear and appear li
+
+
+
+
+// const items=document.getElementsByClassName('item');
+// for(const item of items){
+//     item.addEventListener('click',function(event){
+//         event.target.parentNode.removeChild(event.target);
+//     })
+    
+// }
+
+document.getElementById('listul').addEventListener('click',function(event){
+    event.target.parentNode.removeChild(event.target);
+})  
+
+
+document.getElementById('add-btn-new').addEventListener('click',function(){
+    const listcontainer= document.getElementById("listul");
+   const li = document.createElement("li");
+   li.innerText='brand new items comming';
+   li.classList.add('item');
+   listcontainer.appendChild(li);
+
+})
